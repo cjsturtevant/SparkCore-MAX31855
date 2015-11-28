@@ -30,6 +30,12 @@ Adafruit_MAX31855::Adafruit_MAX31855(int8_t sclk_pin, int8_t cs_pin, int8_t miso
   digitalWrite(_cs, HIGH);
 }
 
+uint32_t Adafruit_MAX31855::readMemory(void) {
+  uint32_t v;
+
+  v = spiread32();
+  return v;
+}
 
 double Adafruit_MAX31855::readInternal(void) {
   uint32_t v;
